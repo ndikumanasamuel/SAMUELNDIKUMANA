@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IGA UMUCO</title>
+</head>
+<body>
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Shaka ijambo</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="andika ijambo ushaka" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Shakisha</button>
+    </form>
+  </div>
+</nav>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>IKINYARWANDA</h1>
+<div class="row">
+    {% for words in words%}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src=" {{ words.image }}  " class=" card-img-top " alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">{{ words.name  }}</h5>
+                <p class="card-text">{{ words.description  }}</p>
+                <a href=" http://127.0.0.1:8000/admin/heritage/words/add/ " class="btn btn-primary">ijambo rishya</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
